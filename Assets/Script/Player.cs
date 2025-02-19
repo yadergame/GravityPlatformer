@@ -5,7 +5,8 @@ public class Player : MonoBehaviour
 {
     private PlayerController _controller;
     [SerializeField] private MoveScript _move;
-
+    public SceneManager sceneManager;
+    
     private void Awake()
     {
         _controller = new PlayerController();
@@ -39,9 +40,16 @@ public class Player : MonoBehaviour
         _move.direction = 0;
         Debug.Log("Move stopped");
     }
+    
 
     private void OnUse(InputAction.CallbackContext context)
     {
         _move.Use();
+    }
+
+    public void Death()
+    {
+        sceneManager.Spawn();
+        Destroy(this.gameObject);        
     }
 }

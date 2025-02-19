@@ -6,8 +6,8 @@ public class StartScript : MonoBehaviour
     [SerializeField] private GameObject player;
 
     [ContextMenu("Заспавнить игрока")]
-    public void Spaw()
+    public Player Spawn()
     {
-        Instantiate(player,transform);
+        return Instantiate(player,transform).GetComponent<Player>();
     }
 }

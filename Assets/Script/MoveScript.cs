@@ -9,7 +9,6 @@ public class MoveScript : MonoBehaviour
 
 
 
-
     [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask groundLayer;
     public void Move()
